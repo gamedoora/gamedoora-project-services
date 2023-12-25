@@ -12,7 +12,7 @@
     <artifactId>gamedoora-project-services</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gamedoora-project-services</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Microservice for Gamedoora Project Service</description>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
