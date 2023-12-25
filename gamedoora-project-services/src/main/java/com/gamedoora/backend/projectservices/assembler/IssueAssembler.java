@@ -1,5 +1,18 @@
 package com.gamedoora.backend.projectservices.assembler;
 
+import com.gamedoora.backend.projectservices.repository.BaseIssueRepository;
+import com.gamedoora.model.dao.ActivityType;
+import com.gamedoora.model.dao.BaseIssue;
+import com.gamedoora.model.dao.Comments;
+import com.gamedoora.model.dao.IssueHistory;
+import com.gamedoora.model.dao.Priority;
+import com.gamedoora.model.dto.BaseIssueDTO;
+import com.gamedoora.model.dto.IssueHistoryDTO;
+import com.gamedoora.model.mapper.IssueHistoryMapper;
+import com.gamedoora.model.mapper.IssueMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;

@@ -1,5 +1,11 @@
 package com.gamedoora.backend.projectservices.assembler;
 
+import com.gamedoora.backend.projectservices.repository.KanBanRepository;
+import com.gamedoora.model.dto.KanBanDTO;
+import com.gamedoora.model.mapper.KanBanMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
