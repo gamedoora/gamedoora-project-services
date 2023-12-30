@@ -38,7 +38,7 @@ public class IssueController extends BaseController{
     }
 
     @PostMapping(
-            value = "/addIssue",
+            value = "/",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<BaseIssueDTO> createIssue(@RequestBody BaseIssueDTO issueDTO){
@@ -46,20 +46,20 @@ public class IssueController extends BaseController{
     }
 
     @PutMapping(
-            value = "/emailId",
+            value = "/issueId",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<BaseIssueDTO> updateIssue(@RequestParam("emailId")String emailId,
+    public ResponseEntity<BaseIssueDTO> updateIssue(@RequestParam("issueId")UUID issueId,
                                                     @RequestBody BaseIssueDTO issueDTO){
-        BaseIssueDTO issue = getIssueAssembler().updateIssue(emailId, issueDTO);
+        BaseIssueDTO issue = getIssueAssembler().updateIssue(issueId, issueDTO);
         if (issue == null) {
-            throw new NotFoundException(MessageFormat.format("Issue by id {0} not found", emailId));
+            throw new NotFoundException(MessageFormat.format("Issue by id {0} not found", issueId));
         }
         return createResponse(issue, HttpStatus.OK);
     }
 
     @PostMapping(
-            value = "/addComments/{id}",
+            value = "/comments/{id}",
             consumes = {MediaType.APPLICATION_JSON_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<BaseIssueDTO> addComment(@RequestParam("id") UUID id,
@@ -83,27 +83,27 @@ public class IssueController extends BaseController{
         return createResponse(null, HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/getIssue/{issueId}")
+    @GetMapping("/{issueId}")
     public ResponseEntity<BaseIssueDTO> findIssueById(@PathVariable("issueId")UUID issueId){
         return createResponse(getIssueAssembler().findIssueById(issueId), HttpStatus.OK);
     }
 
-    @GetMapping("/getIssue/{title}")
+    @GetMapping("/{title}")
     public ResponseEntity<BaseIssueDTO> findIssueByTitle(@PathVariable("issueId")String title){
         return createResponse(getIssueAssembler().findByTitle(title), HttpStatus.OK);
     }
 
-    @GetMapping("/getIssue/{emailId}")
-    public ResponseEntity<BaseIssueDTO> findIssueByUserId(@PathVariable("emailId")String emailId){
+    @GetMapping("/emailId")
+    public ResponseEntity<BaseIssueDTO> findIssueByUserId(@RequestParam("emailId")String emailId){
         return createResponse(getIssueAssembler().findIssueByUserId(emailId), HttpStatus.OK);
     }
 
-    @GetMapping("/getIssue/{priority}")
+    @GetMapping("/{priority}")
     public ResponseEntity<List<BaseIssueDTO>> findIssueByPriority(@PathVariable("priority") Priority priority){
         return createResponse(getIssueAssembler().findIssueByPriority(priority), HttpStatus.OK);
     }
 
-    @GetMapping("/getIssue/{activityType}")
+    @GetMapping("/{activityType}")
     public ResponseEntity<BaseIssueDTO> findIssueByActivityType(@PathVariable("activityType") ActivityType activityType){
         return createResponse(getIssueAssembler().findIssueActivityType(activityType), HttpStatus.OK);
     }

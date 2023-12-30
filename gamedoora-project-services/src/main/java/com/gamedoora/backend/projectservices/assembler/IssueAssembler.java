@@ -63,11 +63,11 @@ public class IssueAssembler {
         return baseIssueDTO;
     }
 
-    public BaseIssueDTO updateIssue(String emailId, BaseIssueDTO baseIssueDTO){
+    public BaseIssueDTO updateIssue(UUID issueId, BaseIssueDTO baseIssueDTO){
         if(baseIssueDTO == null){
             return null;
         }
-        BaseIssue issue = getIssueMapper().baseIssueDTOToBaseIssue(baseIssueDTO);
+        BaseIssue issue = getBaseIssueRepository().findByIssueId(issueId);
         List<IssueHistory> issueHistories = issue.getHistory();
         IssueHistory history = new IssueHistory();
         history.setActivityType(issue.getActivityType());
