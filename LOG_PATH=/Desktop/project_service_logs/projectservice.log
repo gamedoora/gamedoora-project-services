@@ -1,0 +1,44 @@
+2024-Mar-13 22:01:01.909 INFO  [main] c.g.b.p.GamedooraProjectServicesApplication - Starting GamedooraProjectServicesApplication v0.0.1-SNAPSHOT using Java 17.0.9 on DESKTOP-PMFRJI5 with PID 5788 (C:\Users\lenovo\.m2\repository\com\gamedoora\backend\projectservices\gamedoora-project-services\0.0.1-SNAPSHOT\gamedoora-project-services-0.0.1-SNAPSHOT.jar started by lenovo in C:\Users\lenovo\Desktop\GD\picksitquick\gamedoora-project-services)
+2024-Mar-13 22:01:01.915 DEBUG [main] c.g.b.p.GamedooraProjectServicesApplication - Running with Spring Boot v2.7.1, Spring v5.3.21
+2024-Mar-13 22:01:01.917 INFO  [main] c.g.b.p.GamedooraProjectServicesApplication - No active profile set, falling back to 1 default profile: "default"
+2024-Mar-13 22:01:02.056 INFO  [main] o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888/
+2024-Mar-13 22:01:02.057 INFO  [main] o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=projectservice, profiles=[default], label=null, version=null, state=null
+2024-Mar-13 22:01:04.244 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-Mar-13 22:01:04.334 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 JPA repository interfaces.
+2024-Mar-13 22:01:05.666 INFO  [main] o.s.c.c.s.GenericScope - BeanFactory id=000a29b1-afd1-3e25-b4a0-c789bc64ed32
+2024-Mar-13 22:01:06.743 INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2024-Mar-13 22:01:06.779 INFO  [main] o.a.c.c.StandardService - Starting service [Tomcat]
+2024-Mar-13 22:01:06.780 INFO  [main] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.64]
+2024-Mar-13 22:01:07.018 INFO  [main] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2024-Mar-13 22:01:07.019 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4958 ms
+2024-Mar-13 22:01:08.225 INFO  [main] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: primaryPersistenceUnit]
+2024-Mar-13 22:01:08.447 INFO  [main] o.h.Version - HHH000412: Hibernate ORM core version 5.6.9.Final
+2024-Mar-13 22:01:09.085 INFO  [main] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-Mar-13 22:01:09.680 INFO  [main] c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2024-Mar-13 22:01:09.869 INFO  [main] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2024-Mar-13 22:01:09.899 INFO  [main] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-Mar-13 22:01:11.869 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-Mar-13 22:01:11.888 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'primaryPersistenceUnit'
+2024-Mar-13 22:01:11.972 WARN  [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueController': Unsatisfied dependency expressed through method 'setIssueAssembler' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueAssembler': Unsatisfied dependency expressed through method 'setBaseIssueRepository' parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.gamedoora.backend.projectservices.repository.BaseIssueRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-Mar-13 22:01:11.973 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'primaryPersistenceUnit'
+2024-Mar-13 22:01:11.975 INFO  [main] c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-Mar-13 22:01:11.987 INFO  [main] c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-Mar-13 22:01:11.999 INFO  [main] o.a.c.c.StandardService - Stopping service [Tomcat]
+2024-Mar-13 22:01:12.047 INFO  [main] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-Mar-13 22:01:12.112 ERROR [main] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method setBaseIssueRepository in com.gamedoora.backend.projectservices.assembler.IssueAssembler required a bean of type 'com.gamedoora.backend.projectservices.repository.BaseIssueRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.gamedoora.backend.projectservices.repository.BaseIssueRepository' in your configuration.
+

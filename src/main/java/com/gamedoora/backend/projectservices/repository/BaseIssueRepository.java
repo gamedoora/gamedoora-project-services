@@ -19,7 +19,7 @@ public interface BaseIssueRepository extends JpaRepository<BaseIssue, UUID> {
 
     BaseIssue findByTitle(String title);
 
-    BaseIssue findByHistory_EmailId(UUID id);
+    BaseIssue findByHistory_Id(UUID id);
 
     BaseIssue findByComments_Users_EmailId(String emailId);
 
@@ -28,4 +28,5 @@ public interface BaseIssueRepository extends JpaRepository<BaseIssue, UUID> {
     BaseIssue findByComments_Id(long id);
 
     BaseIssue findByComments_IssueId(UUID issueId);
+
 }
