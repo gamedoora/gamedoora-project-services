@@ -52,7 +52,6 @@ public class IssueAssembler {
         this.baseIssueRepository = baseIssueRepository;
     }
 
-
     //--------------------------------------------------------
 
     public BaseIssueDTO createIssue(BaseIssueDTO baseIssueDTO){
@@ -113,7 +112,7 @@ public class IssueAssembler {
 
     public BaseIssueDTO findIssueByHistory(IssueHistoryDTO issueHistoryDTO){
         IssueHistory history = getIssueHistoryMapper().issueHistoryDTOToIssueHistory(issueHistoryDTO);
-        BaseIssue baseIssue = getBaseIssueRepository().findByHistory_Id(history.getId());
+        BaseIssue baseIssue = getBaseIssueRepository().findByHistory_EmailId(history.getId());
         return getIssueMapper().baseIssueToIssueDTO(baseIssue);
     }
 
